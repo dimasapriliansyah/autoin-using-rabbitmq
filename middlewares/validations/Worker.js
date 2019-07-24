@@ -35,6 +35,19 @@ const onSubscribe = {
 			checkFalsy: true,
 			errorMessage: 'tenant key not exists.'
 		}
+	},
+	limit: {
+		in: [ 'body' ],
+		// Sanitized to integer
+		toInt: true,
+		exists: {
+			checkNull: true,
+			checkFalsy: true,
+			errorMessage: 'tenant key not exists.'
+		},
+		isInt: {
+			errorMessage: 'limit must be integer.'
+		}
 	}
 };
 
